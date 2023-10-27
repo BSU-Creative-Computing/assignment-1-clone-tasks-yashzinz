@@ -1,0 +1,130 @@
+//various variables declaring different properities to use for various html elements
+$bg-color: #8ccff7;
+$colors: #4e89ae #43658b #ed6663 #ffa372;
+$circle-radii: 70px 80px 90px 100px;
+$border-radius: 50%;
+$hover-color: #444;
+//using mixin for header height, which changes according to different screen sizes
+@mixin header-height($height){
+    height: $height;
+}
+//using mixin for row height, which changes according to different screen sizes
+@mixin row-height($height2){
+    height: $height2;
+}
+//using mixin for centering elements in html
+@mixin alignment{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+//mixin for various media queries
+@mixin breakpoint($min-width, $max-width){
+    @media screen and (min-width: $min-width) and (max-width: $max-width) {
+        @content
+    }
+}
+
+
+
+body{
+    margin: 0; 
+    width: 100%;
+    height: 100%;   
+}
+//header includes mixin header-height, mixin breakpoint for different screen sizes and variable bg-color for background color
+header{
+    background-color: $bg-color;
+    @include header-height(250px);
+    @include breakpoint(481px, 800px){
+        @include  header-height(200px);
+    }
+    @include breakpoint(0px, 480px){
+        @include header-height(150px);
+    }
+}
+//header image is centered using mixin alignment 
+header img{
+    @extend header;
+    @include alignment;
+}
+
+
+//default selector for rows. Includes background color from colors list, mixin row height, and mixin breakpoint for media queries. 
+.row2{
+    background-color: nth($colors, 2);
+    @include row-height(40px);
+    @include breakpoint(481px, 800px){
+        @include row-height(30px);
+    }
+    @include breakpoint(0px, 480px){
+        @include row-height(25px);
+    }
+}
+//all other rows include default element .row2 and background color from colors list
+.row1{
+    @extend .row2;
+    margin-top: 40px;
+    background-color: nth($colors, 1);
+    @include breakpoint(0px, 480px){
+        margin-top: 30px;
+    }
+}
+.row3{
+    background-color: nth($colors, 3);
+    @extend .row2;
+}
+.row4{
+    background-color: nth($colors, 4);
+    @extend .row2;
+}
+
+//container including circle divs. Using flex for displaying all divs within horizontally. Mixin breakpoint used for positioning divs vertically below width 621px
+.circles{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    justify-content: center;
+    @include breakpoint(0px, 620px){
+        flex-direction: column;
+    };
+
+
+
+}
+.circle1{
+    background-color: nth($colors, 1);
+    width: nth($circle-radii, 1);
+    height: nth($circle-radii, 1);
+    border-radius: $border-radius;
+}
+.circle2{
+    background-color: nth($colors, 2);
+    width: nth($circle-radii, 2);
+    height: nth($circle-radii, 2);
+    border-radius: $border-radius;
+}
+.circle3{
+    background-color: nth($colors, 3);
+    width: nth($circle-radii, 3);
+    height: nth($circle-radii, 3);
+    border-radius: $border-radius;
+}
+.circle4{
+    background-color: nth($colors, 4);
+    width: nth($circle-radii, 4);
+    height: nth($circle-radii, 4);
+    border-radius: $border-radius;
+}
+
+.row1:hover, .row2:hover, .row3:hover, .row4:hover, .circle1:hover, .circle2:hover, .circle3:hover, .circle4:hover{
+    background-color: $hover-color;
+}
+
+
+footer{
+    background-color: $bg-color;
+    height: 50px;
+}

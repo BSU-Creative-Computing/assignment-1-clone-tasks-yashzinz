@@ -1,0 +1,133 @@
+/*a div for centering all content*/
+div{
+    margin-left: 200px;
+    margin-right: 100px;
+}
+
+
+/*Sizing, spacing, and aligning of header logo*/
+header{
+    padding: 10px;
+}
+header img{
+    width: 60px;
+}
+
+
+/*Using flex to position images horizontally. Setting width and flex wrap to display images in two rows*/
+section{
+    display:flex;
+    width: 90vw;
+    flex-wrap: wrap;
+}
+section img{
+    width: 24vw;
+    height: auto;
+}
+
+
+p{
+    font-family:'Courier New', Courier, monospace;
+    line-height:25px;
+    width: 98%;
+}
+.p2{
+    padding-top: 20px;
+}
+
+
+footer{
+    background-color: #2d2d22;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace
+}
+
+
+/*Using media queries to fit content in different screen sizes*/
+@media screen and (min-width: 801px) and (max-width: 1024px){
+    body{
+        margin: 0;
+    }
+    div{
+        margin: 0;
+        margin-left: 0;
+        margin-right: 0;
+
+    }
+    header{
+        padding: 20px;
+    }
+    section img{
+        width: 33%;
+    }
+    section{
+        width: 135%;
+    }
+    p{
+        width: 130%;
+        padding-left: 20px;
+        font-size: 20px;
+    }
+    footer{
+        width: 130%;
+    }
+}
+
+
+@media screen and (min-width: 481px) and (max-width: 800px) {
+    body{
+        margin: 0;
+    }
+    div{
+        margin: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    header img{
+        width: 40px;
+    }
+    section{
+        width: 100%;
+    }
+    section img{
+        width: 50%;
+    }
+    p{
+        font-size: 14px;
+        padding-left: 20px;
+    }
+    footer{
+        font-size: 14px;
+    }
+}
+
+
+@media screen and (max-width: 480px){
+    body{
+        margin: 0;
+    }
+    div{
+        margin: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    header img{
+        width: 30px;
+    }
+    section{
+        width: 50%;
+    }
+    section img{
+        width: 200%;
+    }
+    p{
+        font-size: 14px;
+        padding-left: 20px;
+        width: 90%;
+    }
+    footer{
+        font-size: 11px;
+    }
+}

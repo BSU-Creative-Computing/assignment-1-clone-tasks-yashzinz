@@ -1,0 +1,106 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+/*Using flex on header to display all content within horizontally, space and position them evenly*/
+header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #1e90ff;
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+header h2{
+    font-size: 28px;
+    margin-left: -150px;
+}
+header nav{
+    margin-right: -150px;
+}
+header nav a{
+    text-decoration: none;
+    padding-left: 10px;
+    color: white;
+    font-size: 14px;
+}
+
+header input{
+    width: 280px;
+    height: 40px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding-left: 10px;
+    outline: none;
+    border: 0;
+    margin-left: -20px;
+}
+
+
+/*Using flex on main section to display the two divs within horizontally*/
+main{
+    display: flex;
+    margin-top: 25px;
+    justify-content: center;/*to center the content*/
+    margin-left: 150px;
+    gap: 10px;
+}
+
+.left-side{
+    box-shadow: rgba(56, 56, 56, 0.308) 1px 2px 3px 1px;
+    width: 500px;
+    height: 650px;
+}
+.left-side img{
+    width: 500px;
+    height: auto;
+}
+.left-side p{
+    font-size: 13px;
+    margin-right: 20px;
+    padding-left: 10px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.left-side h4{
+    padding-left: 10px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+button{
+    background-color: #1e90ff;
+    border: 0;
+    padding: 10px;
+    color: white;
+    float: right;
+    border-radius: 4px;
+    font-size: 10px;
+    margin-right: 20px;
+    width: 80px;
+}
+
+/*Using flex on right side div to position the 4 sections within in a 2 by 2 form*/
+.right-side{
+    display: flex;
+    flex-wrap: wrap;
+    width: 600px;
+    gap: 10px;
+
+}
+section img{
+    width: 200px;
+    margin-left: -10px;
+}
+section p{
+    font-size: 13px;
+}
+section{
+    width: 30%;
+    padding: 25px;
+    box-shadow: rgba(56, 56, 56, 0.308) 1px 2px 3px 1px;
+    padding-bottom: 120px;
+}
+section button{
+    margin-right: 0px;
+    margin-top: 30px;
+}
+section h4, p{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
